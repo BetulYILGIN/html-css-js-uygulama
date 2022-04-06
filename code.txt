@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+       <!--DIKDORTGEN CEVRESI HESAPLAMA -->
+       <input type="text" id="a" placeholder="Kısa kenarı giriniz.">
+       <input type="text" id="b" placeholder="Uzun kenarı giriniz.">
+       <input type="button" id="hesapla" value="Hesapla">
+       
+       <script>
+           function cevre_hesapla(){
+               var kisa=document.getElementById("a").value;
+               var uzun=document.getElementById("b").value;
+   
+               kisa1=Number(kisa);
+               uzun1=Number(uzun);
+   
+               var cevre=(kisa1+uzun1)*2;
+               alert("Dikdörtgenin çevresi= "+cevre);
+           }
+           var btn=document.getElementById("hesapla");
+   
+           btn.onclick=cevre_hesapla;
+       </script>
+
+
+
+
+
+          <!--FAKTORIYEL HESAPLAMA-->
+    <input type="text" id="sayi" placeholder="Sayı Giriniz">
+    <input type="button" id="hesapla" value="Hesapla">
+    
+    <script>
+        function faktoriyel_hesapla(){
+            var faktoriyel=1;
+            var sayi=document.getElementById("sayi").value;
+            sayi=Number(sayi);
+            
+            if(sayi>0){
+                for(var i=1;i<=sayi;i++){
+                    faktoriyel=faktoriyel*i;  
+                }
+                alert(sayi+" sayısının faktöriyeli= "+faktoriyel);
+            }
+            else{alert("Girilen değer sayı ve 0'dan büyük olmalıdır.")}
+        }
+
+        var btn=document.getElementById("hesapla");
+        btn.onclick=faktoriyel_hesapla;
+
+    </script>
+
+
+
+
+
+
+
+<h2>RASGELE SAYI URETME </h2>
+
+<button onclick="rasgele_sayi()">Sayı Üret</button>
+
+<h3 id="sayi"></h3>
+    <script>
+        function rasgele_sayi(){
+            document.getElementById("sayi").innerHTML = Math.random();
+        }
+
+    </script>
+
+
+
+   <!--TEK MI CIF MII-->
+   <input type="text" onchange="tek_cift(this)" value="">
+   <script>
+       function tek_cift(sayi){
+           if(sayi.value%2==0){
+               alert(sayi.value+ " sayısı çifttir.");
+           }
+           else if(sayi.value%2==1){
+               alert(sayi.value+" sayısı tektir."); 
+           }
+           else{
+               alert("Girilen değer sayı değildir.");
+           }
+       }
+
+   </script>
+
+
+
+<!--js VIZE FINAL NOTU HESAPLAYAN-->
+</head>
+
+<body>
+    <p>
+        <label for="textfield">Vize Sınavı Notu:</label>
+        <input type="text" name="textfield" id="vize">
+    </p>
+    <p>
+    <label for="textfield">Final Sınavı Notu:</label>
+    <input type="text" name="textfield" id="final">
+    </p>
+<p>
+    <input type="button" name="button" id="sonuc" value="SONUÇ">
+</p>
+<label id="notsonucu">Sonuç</label>
+</p>
+
+<script src="Untitled-2.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--DIZI -->
+<script>
+    var dersler=['Bilgisayar Programlama', 'Matematik', 'Mühendisliğe Giriş', 'Türk Dili'];
+
+    function yazdir(dizi){
+        dizi.forEach(function(madde) {
+            alert(madde);          
+        });
+    }
+
+    yazdir(dersler);
+    
+</script>
+
+<!-- DIZI -->
+<p id="ders1"></p>
+<p id="ders2"></p>
+
+<script>
+
+    var dersler=['Bilgisayar Programlama', 'Matematik', 'Mühendisliğe Giriş', 'Türk Dili'];
+    document.getElementById('ders1').innerHTML=dersler;
+
+    var madde, i;
+    madde="<ul>";
+
+    for(i=0;i<dersler.length;i++){
+        madde+="<li>"+dersler[i]+"</li>";
+    }
+    madde+="</ul>";
+
+    document.getElementById('ders2').innerHTML=madde;
+    
+</script>
+
+
+
+
+<!-- FONKSIYON -->
+
+<script>
+
+    function topla(a,b){
+        return a+b;
+    }
+
+    document.write(topla(100,200));
+
+</script>
+
+
+
+
+</body>
+</html>
